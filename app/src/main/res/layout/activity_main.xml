@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <FrameLayoutme
+        android:id="@+id/calc_share_buttons_main_xml"
+        android:name="kg.geektech.hometask_6_fragments_part1.Calculator_Share_Buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_calculator__share__buttons"
+        />
+
+
+
+    <FrameLayout
+        android:id="@+id/calculator_fragment_main_xml"
+       android:name="kg.geektech.hometask_6_fragments_part1.CalculatorFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/calc_share_buttons_main_xml"
+        tools:layout="@layout/fragment_calculator"/>
+
+    />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
