@@ -5,38 +5,35 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".Result_Share_Fragment"
+    tools:context=".Fragment_Share_to_app"
     android:background="@android:color/background_dark">
     >
-
-
-    <fragment
-        android:layout_marginTop="50dp"
-        android:id="@+id/Calc_share_buttons_last_page"
-        android:name="kg.geektech.hometask_6_fragments_part1.Calculator_Share_Buttons"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:layout_constraintRight_toRightOf="parent"
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_calculator__share__buttons"
-        />
+        app:layout_constraintRight_toRightOf="parent"/>
+
+
+
     <TextView
-        android:id="@+id/result_text_view_last_page"
+        android:id="@+id/result_last_page"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        app:layout_constraintTop_toTopOf="@+id/Calc_share_buttons_last_page"
-        app:layout_constraintBottom_toTopOf="@+id/result_share_last_page"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="200dp"
+        app:layout_constraintBottom_toTopOf="@+id/appShare"/>
 
     <Button
-        android:id="@+id/result_share_last_page"
+        android:id="@+id/appShare"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="@drawable/oval_shape"
         android:text="SHARE"
-        app:layout_constraintTop_toBottomOf="@id/Calc_share_buttons_last_page"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginRight="120dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="320dp"
         android:layout_marginLeft="110dp"/>
 
 

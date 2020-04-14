@@ -30,7 +30,7 @@ public class CalculatorFragment extends Fragment {
     private float result = 0;
     TextView textView;
     String saveString, savedInfo;
-    Button save;
+    Button save, share, calculator;
 
     InterfaceCalculatorFragment interfaceCalculatorFragment;
 
@@ -39,20 +39,33 @@ public class CalculatorFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return  inflater.inflate(R.layout.fragment_result__share_, container, false);
+        return  inflater.inflate(R.layout.fragment_calculator, container, false);
     }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         final MainActivity mainActivity = (MainActivity) getActivity();
-        if (savedInstanceState!= null)
+        if (savedInstanceState!= null){
             saveString = savedInstanceState.getString("saved_String");
-        textView.setText(saveString);
+        textView.setText(saveString);}
         Log.d("lulu", "getting  string value  and saving in (saveString field)  in case of screen orientation will be changed by Bundle savedInstanceState ");
 
-        textView = view.findViewById(R.id.editText);
+        textView = view.findViewById(R.id.result);
         onClick(view);
         Log.d("lulu", "must implement the onClick method");
+
+        share=view.findViewById(R.id.share);
+        calculator=view.findViewById(R.id.calculator);
+
+
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+               //TODO HERE BY CLICKING ON SHARE SHOULD REPLACE CALCULATOR_FRAGMENT TO RESULT_SHARE_FRAGMENT
+
+            }
+        });
 
         save=view.findViewById(R.id.save);
         save.setOnClickListener(new View.OnClickListener() {
@@ -62,8 +75,6 @@ public class CalculatorFragment extends Fragment {
                 Bundle bundle=new Bundle();
                 bundle.putString("savedInfo", savedInfo);
                 Log.d("lulu", "syntax of save button , saving result of editText and putting through bundle, in order to make possible for another fragments to get value from here ");
-
-
 
             }
         });

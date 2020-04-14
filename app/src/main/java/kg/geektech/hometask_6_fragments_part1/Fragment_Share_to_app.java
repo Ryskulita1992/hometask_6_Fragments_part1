@@ -20,16 +20,13 @@ import android.widget.TextView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Result_Share_Fragment  extends Fragment {
-   Button shareIntent, resultShareToApp;
-   TextView resultFieldToShare;
-
+public class Fragment_Share_to_app extends Fragment {
+    Button appShare, resultShareToApp;
+    TextView finalResult;
     ResultShareInterface resultShareListener;
     Integer receivedInfo;
 
-
-
-    public Result_Share_Fragment() {
+    public Fragment_Share_to_app() {
         // Required empty public constructor
     }
     public interface onMessageReadListener{  // establishing the communication between fragment and activity
@@ -41,15 +38,15 @@ public class Result_Share_Fragment  extends Fragment {
                              final Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_result__share_, container, false);
-        resultFieldToShare=view.findViewById(R.id.result_text_view_last_page);
-        shareIntent=view.findViewById(R.id.result_share_last_page);
+        finalResult=view.findViewById(R.id.result_last_page);
+        appShare=view.findViewById(R.id.appShare);
         Bundle bundle = getArguments();
         if (bundle != null) {
             receivedInfo = bundle.getInt("savedInfo");
-            resultFieldToShare.setText(receivedInfo);
+            finalResult.setText(receivedInfo);
 
         }
-        shareIntent.setOnClickListener(new View.OnClickListener() {
+        appShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                         Intent intent = new Intent();
